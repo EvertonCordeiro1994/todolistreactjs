@@ -23,9 +23,17 @@ div{
 }
 
 h1{
-    display: flez;
+    display: flex;
     text-align: center;
     color: var(--font_color);
+}
+
+.form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 10 0 20 0;        
 }
 
 input{
@@ -99,4 +107,67 @@ input::placeholder{
 .tarefa:hover{
     background: #b1aeae54;
     border-radius: 10px;
+}
+
+@media(max-width:500px){
+    #root{
+        width: 100vw;
+        padding: 0px;
+        margin: 0px;
+        font-size: 1rem;
+        
+    }
+    div{
+        width: 300px;
+        margin: 0;
+        padding: 5 0 5 0; 
+
+    }
+
+    .listadetarefas{
+        width: 90%;
+        padding: 0;
+    }
+
+    h1{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding: 10 0 20 0;        
+        margin-right: 250px;
+    }
+    input{
+        width: 75%;
+                
+    }
+    img{
+        display: flex;
+        align-items: center;
+        width: 60%;
+    }
+
+    .tarefa , .tarefaConcluida{
+        display: flex;
+        width: 100%;
+    }
+
+    .div_btn_del_all{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 50 0 0 0;
+    }
+    .btn_del{
+        width: 3rem;
+        height: 2rem;
+        font-size: .6rem;
+    }
 }

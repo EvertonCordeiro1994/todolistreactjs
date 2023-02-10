@@ -37,6 +37,7 @@ function TodoList(){
         setLista(listaAuxiliar);
         
     }
+
     function deletarTudo(){
         setLista([]);
         
@@ -47,20 +48,21 @@ function TodoList(){
             <h1>Lista de tarefas</h1>
         
             <form onSubmit={adicionarItem}>
-                <input 
-                    type="text" 
-                    value={novoItem}
-                    placeholder='Adicione a sua tarefa' 
-                    onChange ={
-                        (e)=>{
-                             setNovoItem(e.target.value)
+                <div className='form'>
+                    <input
+                        type="text"
+                        value={novoItem}
+                        placeholder='Adicione a sua tarefa'
+                        onChange ={
+                            (e)=>{
+                                 setNovoItem(e.target.value)
+                            }
                         }
-                    }
-                />
-
-                <button className='btn_add' type='submit'>
-                    Add
-                </button>
+                    />
+                    <button className='btn_add' type='submit'>
+                        Add
+                    </button>
+                </div>
             </form>
 
             <div className="listadetarefas">
@@ -69,7 +71,6 @@ function TodoList(){
                     ?
                     <img src={Icon} />
                     :
-                    
                     lista.map(
                         (tarefa, index) => 
                         ( 
@@ -83,7 +84,7 @@ function TodoList(){
                 }
                 {
                     lista.length > 1 &&
-                    <div>
+                    <div className='div_btn_del_all'>
                         <button onClick={()=>{deletarTudo()}} className='btn_del_all'>
                             Deletar concluidas
                         </button>
